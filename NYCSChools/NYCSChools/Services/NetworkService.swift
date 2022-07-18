@@ -9,9 +9,8 @@ import Foundation
 import UIKit
 
 class NetWorkService {
-
-    private static let _defaultSession = URLSession(configuration: .default)
-    private static var _dataTask: URLSessionDataTask?
+    private let _defaultSession = URLSession(configuration: .default)
+    private var _dataTask: URLSessionDataTask?
     
     // Get All schools info from api call
     func fetchAllSchools(completion: @escaping((Result<[School]>) -> Void)) {
@@ -24,7 +23,7 @@ class NetWorkService {
         _dataTask = _defaultSession.dataTask(with: request,
                                              completionHandler: { (data, response, error) in
                                                 defer { self._dataTask = nil }
-                                                let result = processSchoolsListRequest(data: data, error: error)
+            let result = self.processSchoolsListRequest(data: data, error: error)
                                                 OperationQueue.main.addOperation {
                                                     completion(result)
                                                 }
@@ -82,4 +81,9 @@ extension NetWorkService {
     struct API {
         static let schoolsUrl       = "https://data.cityofnewyork.us/resource/s3k6-pzi2.json"
     }
+}
+
+enum Result<T> {
+    case success(T)
+    case failure(Error)
 }

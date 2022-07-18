@@ -17,8 +17,9 @@
 		6E99F4562885E877007F3A30 /* NYCSChoolsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E99F4552885E877007F3A30 /* NYCSChoolsUITests.swift */; };
 		6E99F4582885E877007F3A30 /* NYCSChoolsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E99F4572885E877007F3A30 /* NYCSChoolsUITestsLaunchTests.swift */; };
 		6E99F4682885EFD4007F3A30 /* School.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E99F4672885EFD4007F3A30 /* School.swift */; };
-		6E99F46B2885F19B007F3A30 /* SchoolViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E99F46A2885F19B007F3A30 /* SchoolViewModel.swift */; };
+		6E99F46B2885F19B007F3A30 /* SchoolsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E99F46A2885F19B007F3A30 /* SchoolsViewModel.swift */; };
 		6E99F46F2885F21D007F3A30 /* SchoolDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E99F46E2885F21D007F3A30 /* SchoolDetailViewModel.swift */; };
+		6E99F4702885F2BF007F3A30 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E99F4652885EAA2007F3A30 /* NetworkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +55,7 @@
 		6E99F4572885E877007F3A30 /* NYCSChoolsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYCSChoolsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		6E99F4652885EAA2007F3A30 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		6E99F4672885EFD4007F3A30 /* School.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = School.swift; sourceTree = "<group>"; };
-		6E99F46A2885F19B007F3A30 /* SchoolViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolViewModel.swift; sourceTree = "<group>"; };
+		6E99F46A2885F19B007F3A30 /* SchoolsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolsViewModel.swift; sourceTree = "<group>"; };
 		6E99F46E2885F21D007F3A30 /* SchoolDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolDetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -165,7 +166,7 @@
 		6E99F46C2885F1E3007F3A30 /* SchoolView */ = {
 			isa = PBXGroup;
 			children = (
-				6E99F46A2885F19B007F3A30 /* SchoolViewModel.swift */,
+				6E99F46A2885F19B007F3A30 /* SchoolsViewModel.swift */,
 			);
 			path = SchoolView;
 			sourceTree = "<group>";
@@ -311,10 +312,11 @@
 			files = (
 				6E99F4392885E874007F3A30 /* ViewController.swift in Sources */,
 				6E99F46F2885F21D007F3A30 /* SchoolDetailViewModel.swift in Sources */,
-				6E99F46B2885F19B007F3A30 /* SchoolViewModel.swift in Sources */,
+				6E99F46B2885F19B007F3A30 /* SchoolsViewModel.swift in Sources */,
 				6E99F4352885E874007F3A30 /* AppDelegate.swift in Sources */,
 				6E99F4372885E874007F3A30 /* SceneDelegate.swift in Sources */,
 				6E99F4682885EFD4007F3A30 /* School.swift in Sources */,
+				6E99F4702885F2BF007F3A30 /* NetworkService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
