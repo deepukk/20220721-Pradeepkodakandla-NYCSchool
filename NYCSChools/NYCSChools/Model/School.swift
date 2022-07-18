@@ -10,6 +10,7 @@ import Foundation
 struct School: Codable {
     let dbn: String?
     let schoolName:String?
+    let location: String?
     let overview:String?
     let address1:String?
     let city:String?
@@ -27,6 +28,7 @@ struct School: Codable {
     let bus: String?
     enum CodingKeys : String, CodingKey {
         case schoolName         = "school_name"
+        case location           = "location"
         case overview           = "overview_paragraph"
         case phoneNumber        = "phone_number"
         case faxNumber          = "fax_number"

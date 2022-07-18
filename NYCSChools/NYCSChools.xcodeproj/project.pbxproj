@@ -20,6 +20,9 @@
 		6E99F46B2885F19B007F3A30 /* SchoolsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E99F46A2885F19B007F3A30 /* SchoolsViewModel.swift */; };
 		6E99F46F2885F21D007F3A30 /* SchoolDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E99F46E2885F21D007F3A30 /* SchoolDetailViewModel.swift */; };
 		6E99F4702885F2BF007F3A30 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E99F4652885EAA2007F3A30 /* NetworkService.swift */; };
+		6E99F4722885F52D007F3A30 /* SchoolsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E99F4712885F52D007F3A30 /* SchoolsViewController.swift */; };
+		6E99F4742885F8F1007F3A30 /* SchoolTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E99F4732885F8F1007F3A30 /* SchoolTableViewCell.swift */; };
+		6E99F4762885F963007F3A30 /* SchoolViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E99F4752885F963007F3A30 /* SchoolViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +60,9 @@
 		6E99F4672885EFD4007F3A30 /* School.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = School.swift; sourceTree = "<group>"; };
 		6E99F46A2885F19B007F3A30 /* SchoolsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolsViewModel.swift; sourceTree = "<group>"; };
 		6E99F46E2885F21D007F3A30 /* SchoolDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolDetailViewModel.swift; sourceTree = "<group>"; };
+		6E99F4712885F52D007F3A30 /* SchoolsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolsViewController.swift; sourceTree = "<group>"; };
+		6E99F4732885F8F1007F3A30 /* SchoolTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchoolTableViewCell.swift; sourceTree = "<group>"; };
+		6E99F4752885F963007F3A30 /* SchoolViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +173,9 @@
 			isa = PBXGroup;
 			children = (
 				6E99F46A2885F19B007F3A30 /* SchoolsViewModel.swift */,
+				6E99F4712885F52D007F3A30 /* SchoolsViewController.swift */,
+				6E99F4732885F8F1007F3A30 /* SchoolTableViewCell.swift */,
+				6E99F4752885F963007F3A30 /* SchoolViewModel.swift */,
 			);
 			path = SchoolView;
 			sourceTree = "<group>";
@@ -313,7 +322,10 @@
 				6E99F4392885E874007F3A30 /* ViewController.swift in Sources */,
 				6E99F46F2885F21D007F3A30 /* SchoolDetailViewModel.swift in Sources */,
 				6E99F46B2885F19B007F3A30 /* SchoolsViewModel.swift in Sources */,
+				6E99F4742885F8F1007F3A30 /* SchoolTableViewCell.swift in Sources */,
 				6E99F4352885E874007F3A30 /* AppDelegate.swift in Sources */,
+				6E99F4722885F52D007F3A30 /* SchoolsViewController.swift in Sources */,
+				6E99F4762885F963007F3A30 /* SchoolViewModel.swift in Sources */,
 				6E99F4372885E874007F3A30 /* SceneDelegate.swift in Sources */,
 				6E99F4682885EFD4007F3A30 /* School.swift in Sources */,
 				6E99F4702885F2BF007F3A30 /* NetworkService.swift in Sources */,
