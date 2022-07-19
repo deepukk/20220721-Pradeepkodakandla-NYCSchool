@@ -2,15 +2,16 @@
 //  SchoolViewModel.swift
 //  NYCSChools
 //
-//  Created by Kiran kumar Sanka on 7/18/22.
+//  Created by Pradeep Kodakandla on 7/18/22.
 //
 
 import Foundation
 import UIKit
 
-struct SchoolViewModel {
+class SchoolViewModel {
     var school: School
     var randomColor: UIColor
+    let networkService = NetWorkService()
     
     var address: String {
         if let schoolAddress = school.location {
@@ -20,11 +21,14 @@ struct SchoolViewModel {
         return ""
     }
     
+    var dbn: String? {
+        self.school.dbn
+    }
+
     init(with school: School) {
         self.school = school
         self.randomColor = UIColor.randomColorForCardViewCell()
     }
-    
 }
 
 extension UIColor {

@@ -49,8 +49,54 @@ class NetWorkService {
         } catch {
             return .failure(Error.jsonSerializationFailed(reason: "Failed to convert data to JSON"))
         }
-        
     }
+    
+    // Get SAT results from api call by passing #DBN
+    func getSatResult(for dbn: String ,
+                        completion: @escaping((Result<[SATResult]>) -> Void)) {
+        let urlString = API.satResultUrl + dbn
+        guard let satResultUrl = URL(string: urlString) else {
+            return
+        }
+        print(satResultUrl)
+        
+        var request = URLRequest(url: satResultUrl)
+        request.httpMethod = "GET"
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        let dataTask = _defaultSession.dataTask(with: request,
+                                             completionHandler: { (data, response, error) in
+            let result = self.processSatResultRequest(data: data, error: error)
+                                                OperationQueue.main.addOperation {
+                                                    completion(result)
+                                                }
+        })
+        dataTask.resume()
+    }
+    
+    // Process SATResults from API response
+    func processSatResultRequest( data: Data?,
+                              error: Swift.Error?) -> Result<[SATResult]> {
+        if let error = error {
+            return .failure(Error.requestFailed(reason: error.localizedDescription))
+        }
+        guard let data = data else {
+            return .failure(Error.noData)
+        }
+        let decoder = JSONDecoder()
+        do {
+            let user = try JSONSerialization.jsonObject(with: data, options: [])
+            print(user)
+        } catch {
+            return .failure(Error.jsonSerializationFailed(reason: "Failed to convert data to JSON"))
+        }
+        do {
+            let satResult = try decoder.decode([SATResult].self, from: data)
+            return .success(satResult)
+        } catch {
+            return .failure(Error.jsonSerializationFailed(reason: "Failed to convert data to JSON"))
+        }
+    }
+
 }
 
 // MARK: - Error Definitions
@@ -80,6 +126,8 @@ extension NetWorkService.Error: LocalizedError {
 extension NetWorkService {
     struct API {
         static let schoolsUrl       = "https://data.cityofnewyork.us/resource/s3k6-pzi2.json"
+        static let satResultUrl     = "https://data.cityofnewyork.us/resource/f9bf-2cp4?dbn="
+
     }
 }
 

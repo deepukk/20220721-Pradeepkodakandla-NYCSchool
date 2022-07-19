@@ -27,6 +27,11 @@ class SchoolsViewController: UIViewController, ScchoolsViewModelDelegate {
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //Pass the selected school with sat score to the destinatiion view controller
+        if segue.identifier == "SchoolDetailView" {
+            let detailViewController = segue.destination as! SchoolDetailTableViewController
+            detailViewController.viewModel = self.viewModel.selectedSchoolDetailViewModel()
+        }
     }
     
     func reload() {
@@ -51,6 +56,6 @@ extension SchoolsViewController: UITableViewDataSource, UITableViewDelegate {
     
     //MARK: - UITable View Delegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-                
+        self.viewModel.selectedSchoolViewModel = self.viewModel.school(at: indexPath.row)
     }
 }

@@ -7,49 +7,16 @@
 
 import Foundation
 
-protocol ScchoolsViewModelDelegate {
+protocol ScchoolsViewModelDelegate: AnyObject {
     func reload()
 }
 
 class SchoolsViewModel {
     let service = NetWorkService()
     var dataSource: [SchoolViewModel] = []
-    var schl:School? = nil
-    var delegate: ScchoolsViewModelDelegate?
-    
-    var schoolName: String {
-        return schl?.schoolName ?? ""
-    }
-    
-    var location: String {
-        if let add = schl?.address1,
-            let city = schl?.city,
-            let state = schl?.state,
-            let zip = schl?.zip {
-            return add + "," + city + "," + state + " " + zip
-        }
-        return ""
-    }
-    
-    var grades: String {
-        return schl?.finalGrades ?? ""
-    }
-    
-    var totalStudents: String {
-        if let totalStd = schl?.totalStudents {
-            return totalStd + " students"
-        }
-        return ""
-    }
-    
-    var subtitle: String {
-        if let grades = schl?.finalGrades,
-            let students = schl?.totalStudents {
-            return grades + " | " + students + " students"
-        }
-        return ""
-    }
-    
+    var selectedSchoolViewModel:SchoolViewModel? = nil
+    weak var delegate: ScchoolsViewModelDelegate?
+        
     var numOfRows: Int {
         return dataSource.count
     }
@@ -59,6 +26,14 @@ class SchoolsViewModel {
 
     func school(at index: Int) -> SchoolViewModel {
         dataSource[index]
+    }
+    
+    func selectedSchoolDetailViewModel() -> SchoolDetailViewModel? {
+        guard let schoolModel = self.selectedSchoolViewModel else {
+            return nil
+        }
+        let detailViewModel = SchoolDetailViewModel(with: schoolModel.school)
+        return detailViewModel
     }
     
     func getAllSchoolsList() {
