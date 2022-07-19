@@ -57,5 +57,6 @@ extension SchoolsViewController: UITableViewDataSource, UITableViewDelegate {
     //MARK: - UITable View Delegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.viewModel.selectedSchoolViewModel = self.viewModel.school(at: indexPath.row)
+        self.performSegue(withIdentifier:"SchoolDetailView", sender: self)
     }
 }
