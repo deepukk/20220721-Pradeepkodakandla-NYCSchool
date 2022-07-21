@@ -32,7 +32,7 @@ class SchoolViewModel {
 }
 
 extension UIColor {
-    
+    //random color generator for a school
     class func randomColorForCardViewCell() -> UIColor {
         let lightRed: UIColor? = UIColor(red: 0.925, green: 0.290, blue: 0.255, alpha: 1.00)
         let lightBlue: UIColor? = UIColor(red: 0.000, green: 0.639, blue: 0.812, alpha: 1.00)

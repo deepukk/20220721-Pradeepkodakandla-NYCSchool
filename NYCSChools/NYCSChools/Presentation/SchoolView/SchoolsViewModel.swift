@@ -28,6 +28,7 @@ class SchoolsViewModel {
         dataSource[index]
     }
     
+    //returns the selected school detail view model
     func selectedSchoolDetailViewModel() -> SchoolDetailViewModel? {
         guard let schoolModel = self.selectedSchoolViewModel else {
             return nil
@@ -36,6 +37,7 @@ class SchoolsViewModel {
         return detailViewModel
     }
     
+    //gets all the school list and reloads
     func getAllSchoolsList() {
         service.fetchAllSchools(completion: { (result) in
             switch result {
